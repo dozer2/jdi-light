@@ -6,6 +6,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Text;
 import com.epam.jdi.light.vuetify.annotations.JDIButtonGroup;
 import com.epam.jdi.light.vuetify.elements.complex.ButtonGroup;
+import io.github.com.custom.VuetifyDropdown;
 
 public class ButtonGroupsPage extends VuetifyPage {
 
@@ -35,20 +36,18 @@ public class ButtonGroupsPage extends VuetifyPage {
                     "//div[@role = 'combobox']",
             expand = ".v-input__append-inner",
             value = ".v-select__selection--comma",
-            list = "//ancestor-or-self::*//div[@role='listbox' and .//div[@class = 'v-list-item__title' " +
-                    "and contains(text(), 'Arial')]]//div[contains(@class, 'v-list-item__title')]"
+            list = "//div[contains(@class, 'v-list-item__title')]"
     )
-    public static Dropdown fontDropdown;
+    public static VuetifyDropdown fontDropdown;
 
     @JDropdown(
             root = "//*[@id = 'ToolbarButtonGroup']//div[contains(@class, 'v-autocomplete')][2]" +
                     "//div[@role = 'combobox']",
             expand = ".v-input__append-inner",
             value = ".v-select__selection--comma",
-            list = "//ancestor-or-self::*//div[@role='listbox' and .//div[@class = 'v-list-item__title' " +
-                    "and contains(text(), '0%')]]//div[contains(@class, 'v-list-item__title')]"
+            list = "//div[contains(@class, 'v-list-item__title')]"
     )
-    public static Dropdown sizeDropdown;
+    public static VuetifyDropdown sizeDropdown;
 
     @UI("//*[@id = 'ToolbarButtonGroup']//div[contains(@class, 'v-item-group')][1]")
     @JDIButtonGroup(buttons = "button")
